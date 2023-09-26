@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/forum
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      format_sql: true
+      dll-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-forum.html
+    operationsSorter : method
+serve:
+  error:
+    include-stacktrace: never
